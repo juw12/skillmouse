@@ -54,6 +54,7 @@ Models: set an API key (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`,
 automatically. Optional autostart: `install-autostart.ps1`.
 
 Try the bundled examples: **Settings > Sources > Add folder** and pick `examples/`.
+New: **`refine-loop`** - select a draft, run it, and the model improves it against a frozen rubric (baseline score, revise from the best version, plateau stop, honest self-judged label).
 
 ## Keyboard
 
