@@ -1,0 +1,7 @@
+# local, per-user files
+config.json
+state.json
+library/
+selftest_report.json
+__pycache__/
+*.pyc
