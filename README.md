@@ -56,6 +56,7 @@ automatically. Optional autostart: `install-autostart.ps1`.
 Try the bundled examples: **Settings > Sources > Add folder** and pick `examples/`.
 New: **`refine-loop`** - select a draft, run it, and the model improves it against a frozen rubric (baseline score, revise from the best version, plateau stop, honest self-judged label).
 New: **`design`** - select HTML/CSS or drop a screenshot and get an audit against 8 UI gates (contrast computed from the real colours, tap targets, text size, overflow, alt text...), paste-ready CSS fixes that keep the app's look, and a brand check against its landing page.
+New: **`ambitious-founder`** - select a task or prompt for an ambition pass and a copy-ready rewritten prompt, or select a business idea for a 4-lens board, unit economics with the formulas shown, a small simulated buyer panel (clearly labelled) and the cheapest real test to run this week.
 
 ## Keyboard
 
