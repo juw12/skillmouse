@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SkillMouse guide: Use Claude Code, Codex and OpenCode skills with any model, from your mouse</title>
+<meta name="description" content="Use Claude Code, Codex and OpenCode skills with any model, from your mouse">
+<link rel="canonical" href="https://juw12.github.io/skillmouse/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SkillMouse">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171614" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="SkillMouse guide">
+<meta property="og:description" content="Use Claude Code, Codex and OpenCode skills with any model, from your mouse">
+<style>
+:root{--paper:#fbfaf6;--ink:#1d1c1a;--soft:#5d5a54;--line:#e3dfd5;--card:#ffffff;--accent:#952386;--code:#f1eee6}
+@media (prefers-color-scheme:dark){:root{--paper:#171614;--ink:#eeebe4;--soft:#a9a49a;--line:#35322d;--card:#201f1c;--accent:#e085d4;--code:#262420}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 16px;padding-top:max(8px,env(safe-area-inset-top));background:var(--paper);border-bottom:1px solid var(--line)}
+header.bar img{width:36px;height:36px;border-radius:9px;flex:none}
+header.bar .name{font-weight:700;font-size:18px;line-height:1.2;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+header.bar .name small{display:block;font-weight:500;font-size:13px;color:var(--soft)}
+header.bar a.source{flex:none;display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:1px solid var(--line);border-radius:24px;background:var(--card);color:var(--ink);font-size:15px;font-weight:600;text-decoration:none}
+main{max-width:760px;margin:0 auto;padding:20px 16px 40px}
+main img{max-width:100%;height:auto;border-radius:8px}
+main h1{font-size:30px;line-height:1.2;margin:24px 0 12px}
+main h2{font-size:23px;line-height:1.25;margin:36px 0 12px;padding-top:14px;border-top:1px solid var(--line)}
+main h3{font-size:19px;line-height:1.3;margin:26px 0 8px}
+main h4{font-size:17px;margin:22px 0 6px}
+main p,main li{overflow-wrap:anywhere}
+main a{color:var(--accent);text-underline-offset:3px;padding:6px 0}
+main p[align=center] a,main li>a:only-child{display:inline-block;padding:11px 3px}
+main a:has(>img){display:inline-block;padding:8px 0}
+main p[align=center] a:has(>img[width="100%"]){display:block;padding:0}
+main ul,main ol{padding-left:24px}
+main li{margin:6px 0}
+main blockquote{margin:16px 0;padding:4px 16px;border-left:4px solid var(--accent);color:var(--soft)}
+main code{font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);padding:2px 5px;border-radius:5px;overflow-wrap:anywhere}
+main pre{background:var(--code);padding:14px;border-radius:10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+main pre code{background:none;padding:0;overflow-wrap:normal;white-space:pre}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
+main table{border-collapse:collapse;font-size:15px;min-width:100%}
+main th,main td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+main th{background:var(--code)}
+main hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+main kbd{font:13px ui-monospace,Menlo,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 5px}
+main details{margin:12px 0}
+main summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600}
+footer{max-width:760px;margin:0 auto;padding:18px 16px calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--soft);font-size:14px}
+footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+<header class="bar">
+<img src="icons/icon-192.png" alt="" width="36" height="36">
+<div class="name">SkillMouse<small>Guide</small></div>
+<a class="source" href="https://github.com/juw12/skillmouse">GitHub</a>
+</header>
+<main id="guide">
+<h1 dir="auto">SkillMouse</h1>
+<p dir="auto"><strong>Use Claude Code, Codex, OpenCode and Gemini skills and agents with <em>any</em> model - from your mouse.</strong></p>
+<p dir="auto">A lot of great open-source skills and agents are written only for Claude Code or Codex.<br>
+SkillMouse finds them on your PC and runs them on whatever model you like - OpenAI, Anthropic,<br>
+Gemini, OpenRouter, DeepSeek, Groq, or local models through Ollama / LM Studio.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/juw12/skillmouse/blob/main/docs/launcher.png"><img loading="lazy" src="launcher.png" alt="Launcher" style="max-width: 100%;"></a></p>
+<h2 dir="auto">How it works</h2>
+<ol dir="auto">
+<li>Select text anywhere (browser, editor, email...).</li>
+<li>Press your mouse's <strong>forward side button</strong> or <strong>Ctrl+Shift+Space</strong>.</li>
+<li>Search a skill or agent, press <strong>Enter</strong>. The answer streams in, nicely formatted.</li>
+<li><strong>Insert into app</strong> pastes it back where you were, or <strong>Copy</strong> / ask a follow-up.</li>
+</ol>
+<h3 dir="auto">Drag gesture (donut)</h3>
+<p dir="auto">Hold <strong>Ctrl</strong> and drag anything - selected text, files, images. A donut of your skills appears at the<br>
+cursor; drop on a slice to run it, or on the centre to open the launcher. Mouse wheel / <strong>Tab</strong> shows more.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/juw12/skillmouse/blob/main/docs/donut.png"><img loading="lazy" src="donut.png" width="380" alt="Drag donut" style="max-width: 100%;"></a></p>
+<p dir="auto">Dropped files are read automatically: text and code, <code class="notranslate">.docx</code> / <code class="notranslate">.pptx</code> text, folders, and images<br>
+(sent to vision models).</p>
+<h2 dir="auto">What it discovers</h2>
+<markdown-accessiblity-table><div class="scroll"><table role="table">
+<thead>
+<tr>
+<th>Type</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skills (<code class="notranslate">SKILL.md</code>)</td>
+<td><code class="notranslate">~/.claude/skills</code>, <code class="notranslate">~/.agents/skills</code>, <code class="notranslate">~/.codex/skills</code>, <code class="notranslate">~/.config/opencode/skills</code>, <code class="notranslate">~/.gemini/...</code>, plugins</td>
+</tr>
+<tr>
+<td>Agents</td>
+<td>any <code class="notranslate">agents/</code> folder (Claude, Codex, OpenCode, skill sub-agents) and persona folders with <code class="notranslate">SOUL.md</code></td>
+</tr>
+<tr>
+<td>Commands</td>
+<td><code class="notranslate">commands/</code>, <code class="notranslate">prompts/</code>, <code class="notranslate">workflows/</code> markdown (<code class="notranslate">$ARGUMENTS</code> = your instruction)</td>
+</tr>
+<tr>
+<td>Rules</td>
+<td><code class="notranslate">CLAUDE.md</code>, <code class="notranslate">AGENTS.md</code>, <code class="notranslate">GEMINI.md</code>, <code class="notranslate">.cursorrules</code></td>
+</tr>
+<tr>
+<td>Library</td>
+<td>anything you import (Ctrl+K &gt; Import)</td>
+</tr>
+</tbody>
+</table></div></markdown-accessiblity-table>
+<p dir="auto">Add any folder - e.g. a cloned GitHub skills repo - in <strong>Settings &gt; Sources</strong>.<br>
+A skill's extra files (references, scripts) are bundled into the prompt up to a configurable budget.</p>
+<h2 dir="auto">Install</h2>
+<p dir="auto">Windows 10/11, Python 3.10+.</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">git clone https:<span class="pl-k">//</span><span class="pl-c1">github.com</span><span class="pl-k">/</span>juw12<span class="pl-k">/</span>skillmouse
+cd skillmouse
+pip install tkinterdnd2        <span class="pl-c"><span class="pl-c">#</span> optional: drag gesture + drag-and-drop</span>
+pythonw skillmouse.py          <span class="pl-c"><span class="pl-c">#</span> or double-click "Start SkillMouse.cmd"</span></pre></div>
+<p dir="auto">Models: set an API key (<code class="notranslate">OPENAI_API_KEY</code>, <code class="notranslate">ANTHROPIC_API_KEY</code>, <code class="notranslate">GEMINI_API_KEY</code>, <code class="notranslate">OPENROUTER_API_KEY</code>,<br>
+<code class="notranslate">DEEPSEEK_API_KEY</code>, <code class="notranslate">GROQ_API_KEY</code>) or paste it in <strong>Settings &gt; Models</strong>. Ollama and LM Studio are detected<br>
+automatically. Optional autostart: <code class="notranslate">install-autostart.ps1</code>.</p>
+<p dir="auto">Try the bundled examples: <strong>Settings &gt; Sources &gt; Add folder</strong> and pick <code class="notranslate">examples/</code>.<br>
+New: <strong><code class="notranslate">refine-loop</code></strong> - select a draft, run it, and the model improves it against a frozen rubric (baseline score, revise from the best version, plateau stop, honest self-judged label).<br>
+New: <strong><code class="notranslate">design</code></strong> - select HTML/CSS or drop a screenshot and get an audit against 8 UI gates (contrast computed from the real colours, tap targets, text size, overflow, alt text...), paste-ready CSS fixes that keep the app's look, and a brand check against its landing page.<br>
+New: <strong><code class="notranslate">ambitious-founder</code></strong> - select a task or prompt for an ambition pass and a copy-ready rewritten prompt, or select a business idea for a 4-lens board, unit economics with the formulas shown, a small simulated buyer panel (clearly labelled) and the cheapest real test to run this week.</p>
+<h2 dir="auto">Keyboard</h2>
+<markdown-accessiblity-table><div class="scroll"><table role="table">
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">Enter</code></td>
+<td>run the selected skill</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+K</code></td>
+<td>actions (favorite, import, change model, settings...)</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+M</code></td>
+<td>switch model</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+E</code></td>
+<td>edit the input text</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+D</code> / <code class="notranslate">Ctrl+O</code></td>
+<td>favorite / open the skill file</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+1..6</code></td>
+<td>tabs</td>
+</tr>
+<tr>
+<td><code class="notranslate">Ctrl+Enter</code> (result)</td>
+<td>insert the answer into the app you came from</td>
+</tr>
+</tbody>
+</table></div></markdown-accessiblity-table>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/juw12/skillmouse/blob/main/docs/actions.png"><img loading="lazy" src="actions.png" alt="Actions" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/juw12/skillmouse/blob/main/docs/result.png"><img loading="lazy" src="result.png" alt="Result" style="max-width: 100%;"></a></p>
+<h2 dir="auto">Customize</h2>
+<p dir="auto">Seven themes, accent colour, font, size, opacity, mouse button, hotkey, drag modifier - <strong>Settings</strong> (<code class="notranslate">Ctrl+,</code>).</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/juw12/skillmouse/blob/main/docs/settings.png"><img loading="lazy" src="settings.png" alt="Settings" style="max-width: 100%;"></a></p>
+<h2 dir="auto">Limits</h2>
+<p dir="auto">Skills and agents run as <strong>instructions</strong> on the chosen model. Tools the original agent would call<br>
+(shell, file edits, web fetch, MCP) are not executed - the model is told to give you the exact step instead.<br>
+For fully agentic use of Claude Code with other models, look at routers such as claude-code-router or LiteLLM.</p>
+<h2 dir="auto">CLI</h2>
+<pre class="notranslate"><code class="notranslate">python skillmouse.py --list                 # everything discovered
+python skillmouse.py --models               # usable models
+python skillmouse.py --prompt code-review   # the system prompt sent for a skill
+python skillmouse.py --ask code-review --model ollama:qwen3:8b --text "def f(x): ..."
+python skillmouse.py --import path\to\skill-or-agent
+python skillmouse.py --selftest             # drives the real UI for ~30 s (moves your mouse)
+</code></pre>
+<h2 dir="auto">License</h2>
+<p dir="auto">Released under the <a href="https://github.com/juw12/skillmouse/blob/main/LICENSE">MIT License</a> © 2026 Juwen Lie. Contributions are welcome under the same license; see the <a href="https://github.com/juw12/.github/blob/main/CONTRIBUTING.md">contributing guide</a> and <a href="https://github.com/juw12/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+</main>
+<footer>
+This is the SkillMouse guide: the project's README, laid out to read on a phone and kept for when there is no connection.
+It is the README of 2026-11-07. SkillMouse itself is installed and run the way the guide says; the code is at
+<a href="https://github.com/juw12/skillmouse">github.com/juw12/skillmouse</a>.
+</footer>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
